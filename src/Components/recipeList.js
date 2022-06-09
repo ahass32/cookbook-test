@@ -13,6 +13,7 @@ const RecipeList = (props) => {
             borderStyle: "solid",
             borderWidth: 3,
             margin: 10,
+            cursor: "pointer",
           }}
           key={key}
           shadow="sm"
@@ -23,7 +24,14 @@ const RecipeList = (props) => {
           onClick={() => props.clickCard(recipe)}
         >
           <Card.Section>
-            <Image src={recipe.image} height={160} alt="No way!" />
+            <Image
+              src={recipe.image}
+              height={160}
+              alt="No way!"
+              sx={{
+                pointerEvents: "none",
+              }}
+            />
           </Card.Section>
 
           <Text weight={500} size="lg">
