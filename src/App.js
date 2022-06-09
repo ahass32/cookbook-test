@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
 
-const recipes = [
-  {
-    author: "Jim",
-    name: "Chicken Curry",
-    description: "Delicious spicy chicken curry"
-  },
-  {
-    author: "Aravind",
-    name: "Hamburger",
-    description: "Juicy burger with toppings and a soft bun",
-  }
-]
+import "./App.css";
+
+import AppHeader from "./Components/Header/header";
+import ThemeProvider from "./Theme/theme-provider";
+import HomePage from "./Pages/home-page";
 
 function App() {
+  const [opened, setOpened] = useState(false);
+
   return (
-    <div className="App">
-    </div>
+    <ThemeProvider>
+      <AppHeader headerName="Cookbook">
+        <HomePage />
+      </AppHeader>
+    </ThemeProvider>
   );
 }
 
